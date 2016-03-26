@@ -1,0 +1,9 @@
+*.pyc
+
+# PyCharm .idea dir
+.idea
+
+# outputs of building package
+MANIFEST
+build
+dist
