@@ -4,7 +4,7 @@ from setuptools import find_packages
  
 setup(
     name='optimizely-platform',
-    version='0.0.5',
+    version='0.0.6',
     description='Package providing modules needed to build add-ons that run natively in the Optimizely platform.',
     author='Jon Gaulding, Tyler Jones, Peng-Wen Chen, Ali Rizvi',
     author_email='developers@optimizely.com',

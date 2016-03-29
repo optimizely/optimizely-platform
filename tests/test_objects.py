@@ -54,6 +54,15 @@ class TestAudienceCondition(unittest.TestCase):
     self.assertEqual('Each provided option must be an instance of AudienceConditionOption.',
                      str(cm.exception))
 
+  def test_list_equality(self):
+    options = [objects.AudienceConditionOption('rainy', 'Rainy'), objects.AudienceConditionOption('snowy', 'Snowy')]
+
+    test_condition_list_1 = [objects.AudienceCondition('Weather', options)]
+    test_condition_list_2 = [objects.AudienceCondition('Weather', options)]
+    # since __hash__ is set to None, collections.Counter comparison using memory addresses shouldn't be performed and
+    # __eq__ should be called instead. Refer to: https://docs.python.org/2/reference/datamodel.html#object.__hash__
+    self.assertItemsEqual(test_condition_list_1, test_condition_list_2)
+
 
 class TestVisitorSet(unittest.TestCase):
   """Tests for the optimizely_platform.objects.VisitorSet class."""

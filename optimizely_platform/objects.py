@@ -38,6 +38,11 @@ class AudienceCondition(object):
   """Class containing the details of an audience condition provided by a third party."""
 
   # TODO(jon): Strictly enforce that the system_name matches a field in the integration's config.yaml.
+  
+  # Defined because unittests.assertItemsEqual called on two equal lists containing AudienceCondition objects will fail
+  # due to hash-based comparison of memory addresses. Setting __hash__ to None causes __eq__ to be called instead which
+  # is the desired functionality. Refer to: https://docs.python.org/2/reference/datamodel.html#object.__hash__
+  __hash__ = None
 
   def __init__(self, system_name, options):
     for option in options:
