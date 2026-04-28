@@ -11,7 +11,6 @@ setup(
     author_email='developers@optimizely.com',
     license='MIT',
     url='https://github.com/optimizely/optimizely-platform',
-    download_url='https://github.com/optimizely/optimizely-platform/tarball/0.0.7',
     keywords=['optimizely', 'platform', 'integration', 'add-on'],
     classifiers=[
       'Development Status :: 4 - Beta',
